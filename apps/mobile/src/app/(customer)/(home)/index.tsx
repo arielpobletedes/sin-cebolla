@@ -60,7 +60,10 @@ export default function CustomerHomeScreen() {
             <Pressable
               style={styles.card}
               onPress={() =>
-                router.push(`/(customer)/(home)/restaurant/${item.id}`)
+                router.push({
+                  pathname: "/(customer)/(home)/restaurant/[id]",
+                  params: { id: item.id },
+                })
               }
             >
               {item.imageUrl ? (

@@ -44,7 +44,7 @@ export default function CreateRestaurantScreen() {
       }),
     onSuccess: (restaurant) => {
       void queryClient.setQueryData(["my-restaurant"], restaurant);
-      router.replace("/(owner)/(index)/index");
+      router.replace("/(owner)/(index)");
     },
     onError: (e: any) => {
       Alert.alert(

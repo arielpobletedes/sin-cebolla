@@ -45,7 +45,10 @@ export default function CartScreen() {
       }),
     onSuccess: (res) => {
       clearCart();
-      router.push(`/(customer)/(home)/order/${res.data.id}`);
+      router.push({
+        pathname: "/(customer)/(home)/order/[id]",
+        params: { id: res.data.id },
+      });
     },
     onError: (e: any) => {
       Alert.alert(
