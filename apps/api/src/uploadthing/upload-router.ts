@@ -14,6 +14,7 @@ export const uploadRouter: FileRouter = {
     },
   })
     .middleware(({ req }) => {
+      console.log('restaurantImage');
       const authReq = req as AuthenticatedRequest;
       return { uploadedBy: authReq.user?.sub ?? 'unknown' };
     })
@@ -30,6 +31,7 @@ export const uploadRouter: FileRouter = {
     },
   })
     .middleware(({ req }) => {
+      console.log('menuItemImage');
       const authReq = req as AuthenticatedRequest;
       return { uploadedBy: authReq.user?.sub ?? 'unknown' };
     })
