@@ -6,6 +6,7 @@ import { DbModule } from './db/db.module.js';
 import { AuthModule } from './auth/auth.module.js';
 import { RestaurantsModule } from './restaurants/restaurants.module.js';
 import { MenuModule } from './menu/menu.module.js';
+import { OrdersModule } from './orders/orders.module.js';
 
 @Module({
   imports: [
@@ -16,6 +17,7 @@ import { MenuModule } from './menu/menu.module.js';
     AuthModule,
     RestaurantsModule,
     MenuModule,
+    OrdersModule,
   ],
   controllers: [AppController],
   providers: [AppService],

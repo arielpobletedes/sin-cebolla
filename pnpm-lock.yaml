@@ -211,6 +211,9 @@ importers:
       rxjs:
         specifier: ^7.8.2
         version: 7.8.2
+      stripe:
+        specifier: ^22.6.2
+        version: 22.6.2(@types/node@24.13.4)
       uploadthing:
         specifier: ^7.7.4
         version: 7.7.4(express@5.2.1(supports-color@10.2.2))
@@ -278,12 +281,15 @@ importers:
       '@sin-cebolla/types':
         specifier: workspace:*
         version: link:../../packages/types
+      '@stripe/stripe-react-native':
+        specifier: 0.64.0
+        version: 0.64.0(expo@57.0.22)(react-native@0.86.3(@babel/core@7.29.7(supports-color@10.2.2))(@react-native/metro-config@0.87.1(@babel/core@7.29.7(supports-color@10.2.2))(supports-color@10.2.2))(@types/react@19.2.18)(react@19.2.3)(supports-color@10.2.2))(react@19.2.3)
       '@tanstack/react-query':
         specifier: ^5.102.8
         version: 5.102.8(react@19.2.3)
       '@uploadthing/expo':
         specifier: ^7.2.6
-        version: 7.2.6(@uploadthing/mime-types@0.3.6)(expo-constants@57.0.18)(expo-document-picker@57.0.2(expo@57.0.22))(expo-image-picker@57.0.17(expo@57.0.22))(react-native@0.86.3(@babel/core@7.29.7(supports-color@10.2.2))(@react-native/metro-config@0.87.1(@babel/core@7.29.7(supports-color@10.2.2))(supports-color@10.2.2))(@types/react@19.2.18)(react@19.2.3)(supports-color@10.2.2))(react@19.2.3)(uploadthing@7.7.4)
+        version: 7.2.6(@uploadthing/mime-types@0.3.6)(expo-constants@57.0.18)(expo-document-picker@57.0.2(expo@57.0.22))(expo-image-picker@57.0.17(expo@57.0.22))(react-native@0.86.3(@babel/core@7.29.7(supports-color@10.2.2))(@react-native/metro-config@0.87.1(@babel/core@7.29.7(supports-color@10.2.2))(supports-color@10.2.2))(@types/react@19.2.18)(react@19.2.3)(supports-color@10.2.2))(react@19.2.3)(uploadthing@7.7.4(express@5.2.1(supports-color@10.2.2)))
       axios:
         specifier: ^1.20.0
         version: 1.20.0(debug@4.4.3(supports-color@10.2.2))(supports-color@10.2.2)
@@ -365,6 +371,9 @@ importers:
       uploadthing:
         specifier: ^7.7.4
         version: 7.7.4(express@5.2.1(supports-color@10.2.2))
+      zustand:
+        specifier: ^5.0.15
+        version: 5.0.15(@types/react@19.2.18)(react@19.2.3)
     devDependencies:
       '@types/react':
         specifier: ~19.2.18
@@ -2370,6 +2379,19 @@ packages:
 
   '@standard-schema/spec@1.1.0':
     resolution: {integrity: sha512-l2aFy5jALhniG5HgqrD6jXLi/rUWrKvqN/qJx6yoJsgKhblVd+iqqU4RCXavm/jPityDo5TCvKMnpjKnOriy0w==}
+
+  '@stripe/stripe-react-native@0.64.0':
+    resolution: {integrity: sha512-NQxFUMWJ7W/T1jEho3qd0XRnQGhXG6GdcoieG8JZo3IG/1QggugOVqEzvg1HRAq8S+cAGVXaj5CXfJuJsnF3eg==}
+    peerDependencies:
+      expo: '>=46.0.9'
+      react: '*'
+      react-native: '*'
+      react-native-webview: '*'
+    peerDependenciesMeta:
+      expo:
+        optional: true
+      react-native-webview:
+        optional: true
 
   '@tanstack/query-core@5.102.8':
     resolution: {integrity: sha512-ZNjkJ33CqvPNec/6lZBnHqLc3EVGPZ9ySLhYahU9TcuRFdmwXewuj0c4hwSWcGHqEUwcSrKeZ+oGcvPBqXcQcg==}
@@ -5051,6 +5073,15 @@ packages:
     resolution: {integrity: sha512-vavAMRXOgBVNF6nyEEmL3DBK19iRpDcoIwW+swQ+CbGiu7lju6t+JklA1MHweoWtadgt4ISVUsXLyDq34ddcwA==}
     engines: {node: '>=4'}
 
+  stripe@22.6.2:
+    resolution: {integrity: sha512-PwRE2scocvXqDKPiskMa5vRJEAEkq46W69XyUYmAwrNSLr675lQnfqLwnsndAWizwgihOWw/irLmoFRo3ez7ew==}
+    engines: {node: '>=18'}
+    peerDependencies:
+      '@types/node': '>=18'
+    peerDependenciesMeta:
+      '@types/node':
+        optional: true
+
   strtok3@10.3.5:
     resolution: {integrity: sha512-ki4hZQfh5rX0QDLLkOCj+h+CVNkqmp/CMf8v8kZpkNVK6jGQooMytqzLZYUVYIZcFZ6yDB70EfD8POcFXiF5oA==}
     engines: {node: '>=18'}
@@ -5543,6 +5574,24 @@ packages:
 
   zod@3.25.76:
     resolution: {integrity: sha512-gzUt/qt81nXsFGKIFcC3YnfEAx5NkunCfnDlvuBSSFS02bcXu4Lmea0AFIUwbLWxWPx3d9p8S5QoaujKcNQxcQ==}
+
+  zustand@5.0.15:
+    resolution: {integrity: sha512-MpSEjRiBkA9crSYeOUH32rJC7SVqAbm0Fqcqge/bUi2PPoLcBWKOsG+C8mevmpr8TwXHBVkChbbJiyvkE+i/3A==}
+    engines: {node: '>=12.20.0'}
+    peerDependencies:
+      '@types/react': '>=18.0.0'
+      immer: '>=9.0.6'
+      react: '>=18.0.0'
+      use-sync-external-store: '>=1.2.0'
+    peerDependenciesMeta:
+      '@types/react':
+        optional: true
+      immer:
+        optional: true
+      react:
+        optional: true
+      use-sync-external-store:
+        optional: true
 
 snapshots:
 
@@ -7511,6 +7560,13 @@ snapshots:
 
   '@standard-schema/spec@1.1.0': {}
 
+  '@stripe/stripe-react-native@0.64.0(expo@57.0.22)(react-native@0.86.3(@babel/core@7.29.7(supports-color@10.2.2))(@react-native/metro-config@0.87.1(@babel/core@7.29.7(supports-color@10.2.2))(supports-color@10.2.2))(@types/react@19.2.18)(react@19.2.3)(supports-color@10.2.2))(react@19.2.3)':
+    dependencies:
+      react: 19.2.3
+      react-native: 0.86.3(@babel/core@7.29.7(supports-color@10.2.2))(@react-native/metro-config@0.87.1(@babel/core@7.29.7(supports-color@10.2.2))(supports-color@10.2.2))(@types/react@19.2.18)(react@19.2.3)(supports-color@10.2.2)
+    optionalDependencies:
+      expo: 57.0.22(@babel/core@7.29.7(supports-color@10.2.2))(@expo/dom-webview@57.0.1)(@expo/metro-runtime@57.0.15)(expo-router@57.0.21)(react-dom@19.2.3(react@19.2.3))(react-native-web@0.21.2(react-dom@19.2.3(react@19.2.3))(react@19.2.3))(react-native-worklets@0.10.1(@babel/core@7.29.7(supports-color@10.2.2))(@react-native/metro-config@0.87.1(@babel/core@7.29.7(supports-color@10.2.2))(supports-color@10.2.2))(react-native@0.86.3(@babel/core@7.29.7(supports-color@10.2.2))(@react-native/metro-config@0.87.1(@babel/core@7.29.7(supports-color@10.2.2))(supports-color@10.2.2))(@types/react@19.2.18)(react@19.2.3)(supports-color@10.2.2))(react@19.2.3)(supports-color@10.2.2))(react-native@0.86.3(@babel/core@7.29.7(supports-color@10.2.2))(@react-native/metro-config@0.87.1(@babel/core@7.29.7(supports-color@10.2.2))(supports-color@10.2.2))(@types/react@19.2.18)(react@19.2.3)(supports-color@10.2.2))(react@19.2.3)(supports-color@10.2.2)(typescript@6.0.3)
+
   '@tanstack/query-core@5.102.8': {}
 
   '@tanstack/react-query@5.102.8(react@19.2.3)':
@@ -7634,9 +7690,9 @@ snapshots:
 
   '@ungap/structured-clone@1.4.0': {}
 
-  '@uploadthing/expo@7.2.6(@uploadthing/mime-types@0.3.6)(expo-constants@57.0.18)(expo-document-picker@57.0.2(expo@57.0.22))(expo-image-picker@57.0.17(expo@57.0.22))(react-native@0.86.3(@babel/core@7.29.7(supports-color@10.2.2))(@react-native/metro-config@0.87.1(@babel/core@7.29.7(supports-color@10.2.2))(supports-color@10.2.2))(@types/react@19.2.18)(react@19.2.3)(supports-color@10.2.2))(react@19.2.3)(uploadthing@7.7.4)':
+  '@uploadthing/expo@7.2.6(@uploadthing/mime-types@0.3.6)(expo-constants@57.0.18)(expo-document-picker@57.0.2(expo@57.0.22))(expo-image-picker@57.0.17(expo@57.0.22))(react-native@0.86.3(@babel/core@7.29.7(supports-color@10.2.2))(@react-native/metro-config@0.87.1(@babel/core@7.29.7(supports-color@10.2.2))(supports-color@10.2.2))(@types/react@19.2.18)(react@19.2.3)(supports-color@10.2.2))(react@19.2.3)(uploadthing@7.7.4(express@5.2.1(supports-color@10.2.2)))':
     dependencies:
-      '@uploadthing/react': 7.3.3(react@19.2.3)(uploadthing@7.7.4)
+      '@uploadthing/react': 7.3.3(react@19.2.3)(uploadthing@7.7.4(express@5.2.1(supports-color@10.2.2)))
       '@uploadthing/shared': 7.1.10
       expo-constants: 57.0.18(expo@57.0.22)(react-native@0.86.3(@babel/core@7.29.7(supports-color@10.2.2))(@react-native/metro-config@0.87.1(@babel/core@7.29.7(supports-color@10.2.2))(supports-color@10.2.2))(@types/react@19.2.18)(react@19.2.3)(supports-color@10.2.2))(supports-color@10.2.2)
       expo-document-picker: 57.0.2(expo@57.0.22)
@@ -7651,7 +7707,7 @@ snapshots:
 
   '@uploadthing/mime-types@0.3.6': {}
 
-  '@uploadthing/react@7.3.3(react@19.2.3)(uploadthing@7.7.4)':
+  '@uploadthing/react@7.3.3(react@19.2.3)(uploadthing@7.7.4(express@5.2.1(supports-color@10.2.2)))':
     dependencies:
       '@uploadthing/shared': 7.1.10
       file-selector: 0.6.0
@@ -10636,6 +10692,10 @@ snapshots:
 
   strip-bom@3.0.0: {}
 
+  stripe@22.6.2(@types/node@24.13.4):
+    optionalDependencies:
+      '@types/node': 24.13.4
+
   strtok3@10.3.5:
     dependencies:
       '@tokenizer/token': 0.3.0
@@ -11016,3 +11076,8 @@ snapshots:
   yoctocolors@2.2.0: {}
 
   zod@3.25.76: {}
+
+  zustand@5.0.15(@types/react@19.2.18)(react@19.2.3):
+    optionalDependencies:
+      '@types/react': 19.2.18
+      react: 19.2.3
