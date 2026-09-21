@@ -8,10 +8,10 @@ import * as schema from './db/schema/index.js';
 export class AppController {
   constructor(@Inject('DB') private db: NeonHttpDatabase<typeof schema>) {}
 
-  @Get('db-test') // /api/db-test
+  @Get('db-test')
   async dbTest() {
-    const users = await this.db.select().from(schema.users);
-    return { users: users, count: users.length };
+    const result = await this.db.select().from(schema.users);
+    return { users: result, count: result.length };
   }
 
   @Get('health') // /api/health

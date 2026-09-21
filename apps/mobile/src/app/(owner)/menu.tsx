@@ -3,7 +3,7 @@ import { StyleSheet, Text, View } from "react-native";
 export default function OwnerMenuScreen() {
   return (
     <View style={styles.container}>
-      <Text style={styles.text}>Owner Menu home</Text>
+      <Text style={styles.text}>Owner Menu</Text>
     </View>
   );
 }

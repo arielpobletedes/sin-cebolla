@@ -1,9 +1,9 @@
 import { StyleSheet, Text, View } from "react-native";
 
-export default function AnalitycsScreen() {
+export default function OwnerAnalyticsScreen() {
   return (
     <View style={styles.container}>
-      <Text style={styles.text}>analytics home</Text>
+      <Text style={styles.text}>Owner Analytics</Text>
     </View>
   );
 }

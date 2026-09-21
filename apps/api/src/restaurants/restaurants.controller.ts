@@ -13,7 +13,7 @@ import { CreateRestaurantDto } from './dto/create-restaurant.dto.js';
 import { UpdateRestaurantDto } from './dto/update-restaurant.dto.js';
 import { JwtAuthGuard } from '../auth/guards/jwt-auth.guard.js';
 import { RolesGuard } from '../auth/guards/roles.guard.js';
-import { Roles } from '../auth/decorators/role.decorator.js';
+import { Roles } from '../auth/decorators/roles.decorator.js';
 import { JwtPayload } from '@sin-cebolla/types';
 import { UserRole } from '@sin-cebolla/types';
 import { Request as ExpressRequest } from 'express';
